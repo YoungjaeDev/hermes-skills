@@ -24,7 +24,13 @@ hermes skills install YoungjaeDev/hermes-skills/session-handoff
 hermes skills list --enabled-only
 ```
 
-신규 대화에서 `/orca-collab`, `/interview-methodology`, `/dev-flow`, `/session-handoff`로 불러오거나 자연어로 요청할 수 있습니다. 한 번에 여러 스킬을 불러오는 **로컬 호출 별칭**이 필요하면 `hermes bundles create --skill ...`을 사용하세요. 번들은 이 저장소의 배포 단위가 아닙니다.
+신규 대화에서 `/orca-collab`, `/interview-methodology`, `/dev-flow`, `/session-handoff`로 불러오거나 자연어로 요청할 수 있습니다. **CLI 단발 실행(`hermes chat -q`)은 슬래시 문자열만 보내지 말고 `-s`로 스킬을 미리 로드하세요.** 실제 단발 실행에서 이 방법으로 `orca-collab` 내용이 로드되는 것을 확인했습니다.
+
+```bash
+hermes chat -s orca-collab -q 'Orca에서 Claude 작업을 읽기 전용으로 검토해줘' -Q
+```
+
+한 번에 여러 스킬을 불러오는 **로컬 호출 별칭**이 필요하면 `hermes bundles create --skill ...`을 사용하세요. 번들은 이 저장소의 배포 단위가 아닙니다.
 
 `orca-collab`을 실제로 사용하려면 [Orca](https://github.com/stablyai/orca) 앱과 CLI가 필요합니다. 이 스킬은 실행 중인 Orca의 `orca skills get orca-cli`·`orca skills get orchestration`을 읽어 설치 버전에 맞춥니다. Windows/macOS의 기본 명령은 `orca`; Linux에서 Orca 밖의 셸은 GNOME 스크린리더와 충돌하지 않도록 Orca 가이드에 따라 `orca-ide`를 사용할 수 있습니다. Claude Code 로그인과 작업공간 신뢰 확인은 별도로 필요할 수 있습니다.
 
