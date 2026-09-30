@@ -1,0 +1,16 @@
+# Local verification and runtime state
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.venv/
+.env
+.env.*
+!.env.example
+.orca-state/
+*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
